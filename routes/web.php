@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\usersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('users','App\Http\Controllers\usersController');
+//Route::resource('users','App\Http\Controllers\usersController');
+
+Route::view('add','addmember');
+Route::post('add',[usersController::class,'addData']);
