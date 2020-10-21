@@ -9,6 +9,24 @@ class users extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','designation',
+    protected $fillable = ['name','username', 'email', 'password'
 ];
+/**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        
+        'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 }

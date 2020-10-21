@@ -9,10 +9,20 @@ class usersController extends Controller
 {
    function addData(Request $req)
    {
+        /* $users = new Users;
+        $users->id=$req->id;
+        $users->name=$req->name;
+        $users->email=$req->email;
+        $users->phone_no=$req->phone_no;
+        $users->save(); */
+        
         $users = new Users;
         $users->id=$req->id;
         $users->name=$req->name;
-        $users->designation=$req->designation;
-        $users->save();
+        $users->username=$req->username;
+        $users->email=$req->email;
+        $users->password=$req->password;
+        $users->save(); 
+
    }
 }
