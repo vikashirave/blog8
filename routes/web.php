@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\usersController;
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserController2;
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,8 +44,10 @@ Route::get('/login', function () {
 });
 Route::post("user",[UserAuth::class,'userLogin']); */
 
-Route::get('/', function () {
+Route::get('/login', function () {
   return view('login');
 });
 Route::post("/login",[UserController2::class, 'login']);
+Route::get("/",[ProductController::class, 'index']);
+
 

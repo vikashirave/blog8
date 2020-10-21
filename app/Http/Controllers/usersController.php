@@ -16,13 +16,13 @@ class usersController extends Controller
         $users->phone_no=$req->phone_no;
         $users->save(); */
         
-        $users = new Users;
+        /* $users = new Users;
         $users->id=$req->id;
         $users->name=$req->name;
         $users->username=$req->username;
         $users->email=$req->email;
         $users->password=$req->password;
-        $users->save(); 
+        $users->save();  */
 
    }
 }
