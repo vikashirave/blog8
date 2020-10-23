@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\usersController;
-use App\Http\Controllers\UserAuth;
+//use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserController2;
 use App\Http\Controllers\ProductController;
+use App\Http\Middleware\UserAuth;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,10 +45,10 @@ Route::get('/login', function () {
 });
 Route::post("user",[UserAuth::class,'userLogin']); */
 
-Route::get('/login', function () {
+Route::get('/', function () {
   return view('login');
 });
-Route::post("/login",[UserController2::class, 'login']);
-Route::get("/",[ProductController::class, 'index']);
+Route::post("/welcome",[UserController2::class, 'login']);
+Route::post("/login",[ProductController::class, 'login']);
 
 
